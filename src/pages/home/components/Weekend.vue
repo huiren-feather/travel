@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" alt />
         </div>
@@ -20,32 +20,9 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data() {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: '//imgs.qunarzz.com/vs_ceph_vcimg/79faa5a73731e84a7731db49d5baa91e.jpeg',
-        title: '大连圣亚海洋世界',
-        desc: '阿汤哥《碟中谍》取景地'
-      }, {
-        id: '0002',
-        imgUrl: '//imgs.qunarzz.com/p/p53/1809/59/a95e0544d16dc102.jpg_256x160_74bab347.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '阿汤哥《碟中谍》取景地'
-      }, {
-        id: '0003',
-        imgUrl: '//imgs.qunarzz.com/p/p53/1809/59/a95e0544d16dc102.jpg_256x160_74bab347.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '阿汤哥《碟中谍》取景地'
-      }, {
-        id: '0004',
-        imgUrl: '//imgs.qunarzz.com/p/p53/1809/59/a95e0544d16dc102.jpg_256x160_74bab347.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '阿汤哥《碟中谍》取景地'
-      }]
-    }
+  props: {
+    list: Array
   }
-
 }
 </script>
 
@@ -61,7 +38,7 @@ export default {
 .item-img-wrapper
   overflow hidden
   height 0
-  padding-bottom 33.9%
+  padding-bottom 33.43%
   .item-img {
     width  100%
 

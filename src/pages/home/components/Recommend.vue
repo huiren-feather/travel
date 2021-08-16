@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" alt />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,32 +17,9 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: '//imgs.qunarzz.com/p/p53/1809/59/a95e0544d16dc102.jpg_256x160_74bab347.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '阿汤哥《碟中谍》取景地'
-      }, {
-        id: '0002',
-        imgUrl: '//imgs.qunarzz.com/p/p53/1809/59/a95e0544d16dc102.jpg_256x160_74bab347.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '阿汤哥《碟中谍》取景地'
-      }, {
-        id: '0003',
-        imgUrl: '//imgs.qunarzz.com/p/p53/1809/59/a95e0544d16dc102.jpg_256x160_74bab347.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '阿汤哥《碟中谍》取景地'
-      }, {
-        id: '0004',
-        imgUrl: '//imgs.qunarzz.com/p/p53/1809/59/a95e0544d16dc102.jpg_256x160_74bab347.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '阿汤哥《碟中谍》取景地'
-      }]
-    }
+  props: {
+    list: Array
   }
-
 }
 </script>
 
