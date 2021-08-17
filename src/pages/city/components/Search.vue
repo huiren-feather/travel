@@ -19,6 +19,7 @@ export default {
     padding 0 .1rem
     background $bgColor
     .search-input
+    // 不加下面这句，当字数太多时，搜索框的右边框会消失
       box-sizing border-box
       width 100%
       height 0.62rem
