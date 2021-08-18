@@ -5,7 +5,12 @@
     </div>
     <div class="search-content " ref='search' v-show="keyword">
       <ul>
-        <li class="search-item border-bottom" v-for="item of list" :key="item.id">
+        <li
+        class="search-item border-bottom"
+        v-for="item of list"
+        :key="item.id"
+         @click="hangleCityClick(item.name)"
+         >
           {{item.name}}
         </li>
         <li class="search-item border-bottom" v-show="hasNoData">没有找到匹配项</li>
@@ -16,6 +21,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import {mapMutations} from 'vuex'
 export default {
   name: 'CitySearch',
   data () {
@@ -24,6 +30,16 @@ export default {
       list: [],
       timer: null
     }
+  },
+  methods: {
+    hangleCityClick (city) {
+      // this.$store.dispatch('changeCity', city)
+      // 直接调用mutation
+      // this.$store.commit('changeCity1', city)
+      this.changeCity1(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity1'])
   },
   computed: {
     hasNoData () {
